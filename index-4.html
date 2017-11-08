@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contacts</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/google-map.css"/>
+    <link rel="stylesheet" href="css/mailform.css"/>
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search.css"/>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.2.1.js"></script>
+
+    <!--[if lt IE 9]>
+    <html class="lt-ie9">
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+        </a>
+    </div>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <script src='js/device.min.js'></script>
+</head>
+<body>
+<div class="page">
+    <!--========================================================
+                              HEADER
+    =========================================================-->
+    <header class="header-wr">
+        <div id="stuck_container" class="stuck_container">
+
+            <div class="brand">
+                <h1 class="brand_name">
+                    <a href="./">Ariosto</a>
+                </h1>
+                <p class="brand_slogan">
+                    Consulting co.
+                </p>
+            </div>
+
+            <nav class="nav">
+                <ul class="sf-menu" data-type="navbar">
+                    <li>
+                        <a href="./">Home</a>
+                    </li>
+                    <li>
+                        <a href="index-1.html">About</a>
+                        <ul>
+                            <li>
+                                <a href="#">History</a>
+                            </li>
+                            <li>
+                                <a href="#">Staff</a>
+                            </li>
+                            <li>
+                                <a href="#">News</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">Latest</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Archive</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Fresh</a>
+                            </li>
+                            <li>
+                                <a href="#">Archive</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index-2.html">Services</a>
+                    </li>
+                    <li >
+                        <a href="index-3.html">Projects</a>
+                    </li>
+                    <li class="active">
+                        <a href="index-4.html">Contacts</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sform">
+                <a class="search-form_toggle" href="#"></a>
+            </div>
+
+            <form class="search-form" action="search.php" method="GET" accept-charset="utf-8">
+                <label class="search-form_label">
+                    <input class="search-form_input" type="text" name="s" autocomplete="off" placeholder="Search"/>
+                    <span class="search-form_liveout"></span>
+                </label>
+                <button class="search-form_submit fa-search" type="submit"></button>
+            </form>
+        </div>
+    </header>
+    <!--========================================================
+                              CONTENT
+    =========================================================-->
+    <main>
+        <div class="map">
+            <div id="google-map" class="map_model"></div>
+            <ul class="map_locations">
+                <li data-x="-73.9874068" data-y="40.643180">
+                    <p> 9870 St Vincent Place, Glasgow, DC 45 Fr 45. <span>800 2345-6789</span></p>
+                </li>
+            </ul>
+        </div>
+
+        <section class="well-1__off well-1__off-1 well-media-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <h4>Our address</h4>
+
+                        <p class="off">You can contact us any way that is convenient for you. We are available 24/7 via fax, email or telephone. You can also use a quick contact form on the right or visit our office personally.</p>
+                        <address><p>9870 St Vincent Place,<br>
+                                    Glasgow, DC 45 Fr 45.</p>
+                            <dl>
+                                <dt>
+                                    Freephone:
+                                </dt>
+                                <dd>
+                                    <a href="callto:#">+1 800 559 6580</a>
+                                </dd>
+                                <dt>Telephone:</dt>
+                                <dd>
+                                    <a href="callto:#">+1 800 603 6035</a>
+                                </dd>
+                                <dt>FAX:</dt>
+                                <dd>
+                                    <a href="callto:#">+1 800 889 9898</a>
+                                </dd>
+                            </dl>
+                        </address>
+                        <p>E-mail:
+                            <a href="mailto:#" class="mail">mail@demolink.org</a>
+                        </p>
+                    </div>
+                    <div class="col-md-8 col-sm-12">
+                        <h4>Contact form</h4>
+
+                        <form class='mailform' method="post" action="bat/rd-mailform.php">
+                            <input type="hidden" name="form-type" value="contact"/>
+                            <fieldset>
+                                <label data-add-placeholder>
+                                    <input type="text"
+                                           name="name"
+                                           placeholder="Name*:"
+                                           data-constraints="@LettersOnly @NotEmpty"/>
+                                </label>
+
+
+                                <label data-add-placeholder>
+                                    <input type="text"
+                                           name="email"
+                                           placeholder="Email*:"
+                                           data-constraints="@Email @NotEmpty"/>
+                                </label>
+                                <label data-add-placeholder>
+                                    <input type="text"
+                                           name="phone"
+                                           placeholder="Phone*:"
+                                           data-constraints="@Phone @NotEmpty"/>
+                                </label>
+
+                                <label data-add-placeholder>
+                                    <textarea name="message" placeholder="Comment*:"
+                                              data-constraints="@NotEmpty"></textarea>
+                                </label>
+
+                                <div class="mfControls">
+                                    <button class="btn-primary btn-primary__md btn-primary__md-1" type="submit">Submit comment</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--========================================================
+                              FOOTER
+    =========================================================-->
+    <footer>
+        <section class="well-2">
+            <div class="container">
+                <div class="row clear">
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        <h6><strong>Services</strong></h6>
+                        <ul class="list">
+                            <li>
+                                <a href='#'>Risk assessment</a>
+                            </li>
+                            <li>
+                                <a href='#'>Business Planning &</a>
+                            </li>
+                            <li>
+                                <a href='#'>Coaching</a>
+                            </li>
+                            <li>
+                                <a href='#'>Marketing Services</a>
+                            </li>
+                            <li>
+                                <a href='#'>Online Services</a>
+                            </li>
+                            <li>
+                                <a href='#'>Business Plan</a>
+                            </li>
+                            <li>
+                                <a href='#'>Expert Business Plans</a>
+                            </li>
+                            <li>
+                                <a href='#'>International Expansion</a>
+                            </li>
+                            <li>
+                                <a href='#'>Advice</a>
+                            </li>
+                            <li>
+                                <a href='#'>Franchise Assessment</a>
+                            </li>
+                            <li>
+                                <a href='#'>Opportunities for Growth</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        <h6><strong>Industries</strong></h6>
+                        <ul class="list">
+                            <li>
+                                <a href='#'>Assessment</a>
+                            </li>
+                            <li>
+                                <a href='#'>Marketing Plan 1yr</a>
+                            </li>
+                            <li>
+                                <a href='#'>Market Research - Domestic &</a>
+                            </li>
+                            <li>
+                                <a href='#'>International</a>
+                            </li>
+                            <li>
+                                <a href='#'>Sales Analysis & Pricing Analysis</a>
+                            </li>
+                            <li>
+                                <a href='#'>Advertising</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        <h6><strong>GLOBAL NETWORK</strong></h6>
+                        <ul class="list">
+                            <li>
+                                <a href='#'>Asia Pacific</a>
+                            </li>
+                            <li>
+                                <a href='#'>Canada</a>
+                            </li>
+                            <li>
+                                <a href='#'>Europe, Middle East & Africa</a>
+                            </li>
+                            <li>
+                                <a href='#'>Latin America</a>
+                            </li>
+                            <li>
+                                <a href='#'>United States</a>
+                            </li>
+                        </ul>
+                        <h6><strong>About</strong></h6>
+                        <ul class="list">
+                            <li>
+                                <a href='#'>History</a>
+                            </li>
+                            <li>
+                                <a href='#'>Staff</a>
+                            </li>
+                            <li>
+                                <a href='#'>News</a>
+                            </li>
+                            <li>
+                                <a href='#'>Fresh</a>
+                            </li>
+                            <li>
+                                <a href='#'>Archive</a>
+                            </li>
+                            <li>
+                                <a href='#'>Solutions</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        <ul class="social">
+                            <li>
+                                <a href='#' class="fa-google-plus"></a>
+                            </li>
+                            <li>
+                                <a href='#' class="fa-twitter"></a>
+                            </li>
+                            <li>
+                                <a href='#' class="fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href='#' class="fa-pinterest"></a>
+                            </li>
+                            <li>
+                                <a href='#' class="fa-linkedin"></a>
+                            </li>
+                        </ul>
+                        <p>Our company is one of the first consulting companies, which is professionally engaged in
+                           management, preparation and implementation of projects in various fields.</p>
+                        <a href="callto:#">+1 959 603 6035</a>
+
+                        <p class="privacy">© <span id="copyright-year"></span> Ariosto. Consulting Company
+                            <a href="index-5.html">Privacy Policy</a>
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-secondary-1 well-2 well-2__off-2">
+            <div class="container">
+                <ul class="menu-footer">
+                    <li>
+                        <a href='./'>home</a>
+                    </li>
+                    <li>
+                        <a href='index-1.html'>About</a>
+                    </li>
+                    <li>
+                        <a href='index-2.html'>Services</a>
+                    </li>
+                    <li>
+                        <a href='index-3.html'> Projects</a>
+                    </li>
+                    <li class="active">
+                        <a href='index-4.html'>Contacts</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
